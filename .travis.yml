@@ -10,12 +10,21 @@ php:
 
 sudo: false
 
+before_install:
+  - phpenv config-rm xdebug.ini
+
 install:
   - composer install --no-interaction
 
 before_script:
   - phantomjs --webdriver=4444 >/dev/null 2>&1 &
   - vendor/bin/sculpin generate --server --port 4000 > /dev/null 2>&1 &
+  - sleep 2
 
 script:
   - vendor/bin/codecept run
+
+cache:
+  directories:
+    - vendor
+    - $HOME/.composer/cache
