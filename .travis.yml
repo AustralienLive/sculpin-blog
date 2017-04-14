@@ -4,14 +4,11 @@ cache:
   apt: true
 
 php:
+  - '5.6'
   - '7.0'
   - '7.1'
 
 sudo: false
-
-addons:
-  hosts:
-    - australienlive.github.io
 
 before_install:
   - phpenv config-rm xdebug.ini
@@ -21,7 +18,7 @@ install:
 
 before_script:
   - phantomjs --webdriver=4444 >/dev/null 2>&1 &
-  - vendor/bin/sculpin generate --server --port 80 > /dev/null 2>&1 &
+  - vendor/bin/sculpin generate --server --port 4000 > /dev/null 2>&1 &
   - sleep 2
 
 script:
