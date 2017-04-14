@@ -4,7 +4,7 @@ categories:
     - features
 
 ---
-Bla You're all programmers, right? And you're writing code snippets on your Sculpin
+You're all editors, right? And you're writing code snippets on your Sculpin
 powered blog? Yeah. So you want some highlighting with your static site generation?
 Here you go!
 
