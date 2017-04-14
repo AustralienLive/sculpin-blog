@@ -7,3 +7,5 @@
 /source/components/
 /vendor/
 s3.conf
+
+tests/_output/*
