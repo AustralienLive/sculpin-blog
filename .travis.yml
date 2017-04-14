@@ -34,6 +34,6 @@ deploy:
   on:
     branch: master
   local_dir: output_dev/
-  repo: australienlive.github.io
+  repo: AustralienLive/australienlive.github.io
   target_branch: master
 
