@@ -2,6 +2,9 @@ language: php
 
 cache:
   apt: true
+  directories:
+    - vendor
+    - $HOME/.composer/cache
 
 php:
   - '7.1'
@@ -24,7 +27,13 @@ before_script:
 script:
   - vendor/bin/codecept run
 
-cache:
-  directories:
-    - vendor
-    - $HOME/.composer/cache
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master
+  local_dir: output_dev/
+  repo: australienlive.github.io
+  target_branch: master
+
